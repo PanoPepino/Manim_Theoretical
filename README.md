@@ -1,7 +1,6 @@
 # Animation
-Repository of Manim code to create animations for science presentations.
+Repository of Manim code to create animations for science presentations (you can find some of them in my [website](https://panopepino.github.io/web_page/))
 This will be upgraded as I code material.
-
 
 TO DO:
 

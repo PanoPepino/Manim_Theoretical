@@ -1,19 +1,23 @@
+# this is my favorite test file! I will try here to run my package code.
+
+from weakref import ref
 from manim import *
 from objects import *
+from text import *
 
-
-
-
-
-class mytry(Scene):
+class classandmethod(Scene):
     def construct(self):
-        myset = circulitos(radius = 3, color = GREEN)
+        myset = circulitos(radius = 2, color1 = GREEN, color2= WHITE, choice= "2circles")
         self.add(myset)
-        self.play(myset[1].animate.shift(3*LEFT))
-        self.play(FadeOut(myset))
+        self.play(Expand_Bubble(myset, 4))
         
-class mytry2(Scene):
+        
+class svg_try(Scene):
     def construct(self):
         astro = stuff()
         self.add(astro)
         self.play(astro.animate.scale(2))
+        
+class refs(Scene):
+    def construct(self):
+        self.add(ref_161004564)
