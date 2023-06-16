@@ -1,6 +1,6 @@
 from manim import *
 from objects import *
-import figures
+
 
 
 
