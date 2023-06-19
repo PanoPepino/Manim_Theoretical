@@ -3,8 +3,24 @@ Repository of Manim code to create animations for science presentations (you can
 This will be upgraded as I code material.
 
 TO DO:
-
-- Create small subfiles and add them to init
-- Create test animations (2) with functions that return a play and call them somewhere else.
 - Add documentation to start creating package.
-- Check 3b1brown organisation. Check if it can be improved.
+
+Important animation to be added:
+
+- Potential CdL
+- Energetic cost dfiscussion of generation
+- Boiling water animation
+- Rotating AdS and arrow (RS vs DB sign)
+- Bending brane + Strings
+- Table all decoration
+- Q. Cosmo potential 
+- 10D Table Black brane
+- Black hole animation (kwargs)
+- Effective 4D potential for black hole
+- Dark dimension discussion
+- Four fundamental interactions
+- Strings and particles
+- Snake game from rectangle to torus
+- ??
+
+

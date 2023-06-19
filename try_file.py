@@ -1,15 +1,21 @@
 # this is my favorite test file! I will try here to run my package code.
 
-from weakref import ref
 from manim import *
 from objects import *
 from text import *
+
+Tex.set_default(color = WHITE, font_size = 25)
+MathTex.set_default(color = WHITE, font_size = 25)
 
 class classandmethod(Scene):
     def construct(self):
         myset = circulitos(radius = 2, color1 = GREEN, color2= WHITE, choice= "2circles")
         self.add(myset)
+        self.wait(2)
         self.play(Expand_Bubble(myset, 4))
+        self.play(myset[1].animate.shift(LEFT),run_time=4)
+        self.wait(3)
+        self.play(FadeOut(myset), run_time =10)
         
         
 class svg_try(Scene):
@@ -20,4 +26,7 @@ class svg_try(Scene):
         
 class refs(Scene):
     def construct(self):
-        self.add(ref_161004564)
+        nucleation = Bubble(type = 'regular')
+        self.add(nucleation[:-2])
+        self.play(FadeIn(nucleation[-2:]))
+        self.play(Expand_Bubble(nucleation,3))
