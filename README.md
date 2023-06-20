@@ -15,7 +15,6 @@ Important animation to be added:
 - Table all decoration
 - Q. Cosmo potential 
 - 10D Table Black brane
-- Black hole animation (kwargs)
 - Effective 4D potential for black hole
 - Dark dimension discussion
 - Four fundamental interactions

@@ -25,14 +25,9 @@ def Geometrical_stuff():
     Brane_BH= Circle(radius=0.5, color=RED, fill_opacity=0.2, stroke_width=1).move_to(Black_Hole.get_center()).save_state()
 
     Black_Hole_Group= VGroup(Black_Hole, Text_inside_BH,Brane_BH).save_state()
-
     Brane= Circle(radius=0.5, color=RED, fill_opacity=0.2, stroke_width=1).save_state()
     Bubble= Brane.copy().save_state()
-
     Background= RoundedRectangle(corner_radius=0.1, height=5, width=6.5, stroke_width=1, fill_color=BLACK, fill_opacity=0.2)
-
-    
-
     Inside = MathTex("k_{-}", font_size=20, color=BLACK)
     Outside = MathTex("k_{+}", font_size=30, color= BLACK)
 

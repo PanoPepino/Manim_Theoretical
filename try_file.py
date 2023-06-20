@@ -1,7 +1,7 @@
 # this is my favorite test file! I will try here to run my package code.
 
 from manim import *
-from objects import *
+from manim_theoretical import *
 from text import *
 
 Tex.set_default(color = WHITE, font_size = 25)
@@ -30,3 +30,17 @@ class refs(Scene):
         self.add(nucleation[:-2])
         self.play(FadeIn(nucleation[-2:]))
         self.play(Expand_Bubble(nucleation,3))
+
+class black_hole_check(Scene):
+    def construct(self):
+        self.camera.background_color = "#FFFFDC"
+        bhh = Black_Hole(radius=0.2)
+        self.add(bhh)
+        self.wait()
+        self.play(Expand(bhh, scale =3),run_time=2)
+        
+        
+        
+        
+
+        

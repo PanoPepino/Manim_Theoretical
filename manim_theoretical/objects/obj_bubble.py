@@ -1,12 +1,14 @@
+from pickle import NONE
 from manim import *
 
 class Bubble(VGroup):
     """This is a class that creates a VGroup that represents the bubble nucleation. Some of the written parameters depend on the arguments. Observe that the expanding bubble will always be the LAST element of the object.
 
     Parameters:
-        type: if input is "instanton", the written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton. Otherwise, will be k+ and k-.
+        - type = "instanton": Written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton.
+        - type = nothing, will be k+ and k-.
     """
-    def __init__(self, type, **kwargs):
+    def __init__(self, type = NONE, **kwargs):
         super().__init__(**kwargs)
         
         #Geometry
@@ -23,17 +25,3 @@ class Bubble(VGroup):
             self.add(background, out_insta_text, in_insta_text, brane)
         else:
             self.add(background, out_text, in_text, brane)
-        
-class Expand_Bubble(ApplyMethod):
-    """This is a test apply method that wants to expand bubbles.
-
-    Parameters:
-        obj: Eats a group and choses the second element (the bubble to expand).
-        size: how big respect to the initial size you want it to be.
-    """
-    def __init__(self, vgroup, size, **kwargs):
-        ApplyMethod.__init__(
-            self,
-            vgroup[-1].scale,
-            size,
-            **kwargs)  
