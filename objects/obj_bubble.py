@@ -6,7 +6,7 @@ class Bubble(VGroup):
 
     Parameters:
         - type = "instanton": Written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton.
-        - type = nothing, will be k+ and k-.
+        - type = empty, will be k+ and k-.
     """
     def __init__(self, type = NONE, **kwargs):
         super().__init__(**kwargs)

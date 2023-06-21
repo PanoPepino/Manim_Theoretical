@@ -5,12 +5,12 @@ class Expand(AnimationGroup):
 
    Parameters:
         - vgroup: The object to eat. Takes last entry and expand.
-        - rot: if None, nothing happens. if YES, takes the inside text and rotate around BH (10D spinning black hole feature)
+        - spinning: if None, nothing happens. if YES, takes the inside text and rotate around BH (10D spinning black hole feature)
     """
-    def __init__(self, vgroup, scale, rot = None, **kwargs):
+    def __init__(self, vgroup, scale, spinning = None, **kwargs):
         self.vgroup = vgroup
         self.scale = scale
-        if rot is None:
+        if spinning is None:
             super().__init__(
                 vgroup[-1].animate.scale(scale),
                 **kwargs)

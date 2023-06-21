@@ -7,14 +7,12 @@ TO DO:
 
 Important animation to be added:
 
-- Potential CdL
 - Energetic cost dfiscussion of generation
 - Boiling water animation
 - Rotating AdS and arrow (RS vs DB sign)
 - Bending brane + Strings
-- Table all decoration
-- Q. Cosmo potential 
-- 10D Table Black brane
+- Table all decoration 
+- Table 10D Black brane
 - Effective 4D potential for black hole
 - Dark dimension discussion
 - Four fundamental interactions
