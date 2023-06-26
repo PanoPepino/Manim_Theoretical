@@ -6,9 +6,10 @@ class Black_Hole(VGroup):
 
     Parameters:
         - radius: define the radius of the black hole. 
-        - type = "fragmentation" : the written elements will be Q > T, corresponding to the nucleation of a brane a la AdS fragmentation by Maldacena. 
-        - type = "spinning" : written elements will be theta and mu, as in the rotating black hole.
-        - type = empty : empty black hole. No text.
+        - type:
+            - "fragmentation" : the written elements will be Q > T, corresponding to the nucleation of a brane a la AdS fragmentation by Maldacena. 
+            - "spinning" : written elements will be theta and mu, as in the rotating black hole.
+            - empty : empty black hole. No text.
     """
     def __init__(self, radius, type = None, **kwargs):
         super().__init__(**kwargs)

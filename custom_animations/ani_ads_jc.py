@@ -5,12 +5,15 @@ class Rot_AdS_normal_vec(AnimationGroup):
 
    Parameters:
         - vgroup: The object to eat. Takes last entry and expand.
-        - action = None: Make disappear the symmetry and the outer text, at the same time it rotates the outer vacuum to inside, due to Z2.
-        - action = "restore": Restores the initial appareance.
-        - action = "RandalSundrum": Takes the normal vector of the group and move across vacua. When crossing from one to other, it reverses it orientation.
+        - action: 
+            - None: Make disappear the symmetry and the outer text, at the same time it rotates the outer vacuum to inside, due to Z2.
+            - "restore": Restores the initial appareance.
+            - "randalsundrum": Takes the normal vector of the group and move across vacua. When crossing from one to other, it reverses it orientation.
+            - "darkbubble": Takes the normal vector of the group and move across vacua. When crossing, nothing happens, as in the DB model spatial sections always increase!
     """
     def __init__(self, vgroup, action = None, **kwargs):
         self.vgroup = vgroup
+        center = vgroup[0].get_center()
         
         if action is None:
             super().__init__(
@@ -26,12 +29,18 @@ class Rot_AdS_normal_vec(AnimationGroup):
                 Rotate(vgroup[-4], about_point= vgroup[0].get_center(), axis= [0,1,0], rate_func= linear, run_time= 2),
                 **kwargs)
             
-        if action == "RandalSundrum": ## To Be fixed
+        if action == "randalsundrum": 
                 super().__init__(
                     Succession(
-                    vgroup[-1].animate.shift(RIGHT),
-                    Rotate(vgroup[-1], angle= PI, about_point= vgroup[-1].get_center()),
-                    vgroup[-1].animate.shift(3*RIGHT)),
+                    vgroup[-1].animate.move_to(center).build(),
+                    Rotate(vgroup[-1], angle= PI, about_point= center),
+                    vgroup[-1].animate.rotate(PI).shift(4*RIGHT)),
+                **kwargs)
+        if action == "darkbubble": 
+                super().__init__(
+                    Succession(
+                    vgroup[-1].animate.shift(4*RIGHT),
+                    ),
                 **kwargs)
                 
 
