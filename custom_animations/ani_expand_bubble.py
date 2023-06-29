@@ -1,6 +1,6 @@
 from manim import *
 
-class Expand(AnimationGroup):
+class Expand_Bubble(AnimationGroup):
     """Animation that takes a bubble-like object and expands the brane inside it (this is ALWAYS last object in the group)
 
    Parameters:

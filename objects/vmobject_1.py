@@ -18,16 +18,4 @@ class circulitos(VGroup):
         else:
             self.add(c1)
         
-class Expand_Bubble(ApplyMethod):
-    """This is a test apply method that wants to expand bubbles.
 
-    Parameters:
-        obj: Eats a group and choses the second element (the bubble to expand).
-        size: how big respect to the initial size you want it to be.
-    """
-    def __init__(self, vgroup, size, **kwargs):
-        ApplyMethod.__init__(
-            self,
-            vgroup[1].scale,
-            size,
-            **kwargs)  

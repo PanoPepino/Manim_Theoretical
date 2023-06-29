@@ -9,11 +9,10 @@ TO DO:
 
 Important animation to be added:
 
-- Improve class Bubble to accomodate matter, strings and GW.
-- Energetic cost dfiscussion of generation
+- Improve class Bubble to GW.
+- Energetic cost discussion of generation
 - Boiling water animation
 - Bending brane + Strings
-- Table all decoration 
 - Table 10D Black brane
 - Effective 4D potential for black hole
 - Dark dimension discussion
