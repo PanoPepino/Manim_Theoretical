@@ -6,6 +6,7 @@ This will be upgraded as I code material.
 
 TO DO:
 - Add documentation to start creating package.
+- Solve issue with folder figures... set inside manim_theoretical.
 
 Important animation to be added:
 

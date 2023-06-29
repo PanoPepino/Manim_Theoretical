@@ -1,10 +1,10 @@
 from manim import *
 
 class Summary_Table(VGroup):
-    """_summary_
+    """Class that represents a summary table with the dictionary between bulk and induced cosmology.
 
-    Args:
-        VGroup (_type_): _description_
+    Parameters: 
+        - Nope.
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
