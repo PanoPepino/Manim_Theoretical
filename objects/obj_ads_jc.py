@@ -1,7 +1,11 @@
 from manim import *
 
 class AdS_Jc(VGroup):
-    """This class recreates inner and outer vacuum separated by a brane. Text on each vacua and boundary are displayed. The last element is an arrow, to reprent the normal vector.
+    """This class recreates inner and outer vacuum separated by a brane. Text on each vacua and boundary are displayed. 
+    
+    Important:
+        - the normal vector (arrow) is the last entry.
+        - the Z2 sym is the second last entry.
     """
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -14,9 +18,9 @@ class AdS_Jc(VGroup):
         adskm.shift([-2.1,0,0])
         
         #Text
-        in_text = MathTex("-6 k_{-}^{2}").move_to(adskm.get_center())
-        out_text = MathTex("-6 k_{+}^{2}").move_to(adskp.get_center())
-        sym = MathTex("\mathbb{Z}_{2}").move_to(brane.get_corner(UL))
+        in_text = MathTex("\Lambda_{5D} = -6 k_{-}^{2}").move_to(adskm.get_center())
+        out_text = MathTex("\Lambda_{5D} = -6 k_{+}^{2}").move_to(adskp.get_center())
+        sym = MathTex("\mathbb{Z}_{2}").move_to(brane.get_corner(UL)+ [0,0.2,0])
         
         #Arrow
         arrow = Arrow(max_tip_length_to_length_ratio=2, color= BLACK, start = LEFT, end= [0.5,0,0]).move_to(adskm.get_left())
