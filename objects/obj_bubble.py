@@ -5,7 +5,7 @@ class Bubble(VGroup):
     """This is a class that creates a VGroup that represents the bubble nucleation. Some of the written parameters depend on the arguments. Observe that the expanding bubble will always be the LAST element of the object.
 
     Parameters:
-        - type = "instanton": Written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton.
+        - type = "instanton" : Written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton.
         - type = "mass" : There will be a "weight" in the center of the expanding bubble.
         - type = "strings" : There will 8 strings attached to surface of the expanding bubble.
         - type = empty, will be k+ and k-.
@@ -24,7 +24,7 @@ class Bubble(VGroup):
         out_insta_text = MathTex("V(\phi_{+})").move_to(background.get_corner(UR) -[0.45,0.45,0])
         
         #Extra objects
-        mass = SVGMobject("figures/weight.svg").scale(0.3).move_to(brane.get_center())
+        mass = SVGMobject("manim_theoretical/figures/weight.svg").scale(0.3).move_to(brane.get_center())
         
         angles_bubble= VGroup()
         strings_pulling_5D= VGroup()

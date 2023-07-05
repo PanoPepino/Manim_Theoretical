@@ -8,19 +8,21 @@ TO DO:
 - Add documentation to start creating package.
 - Add all equations used during previous presentations.
 
-Important animation to be added:
+Important animation to be added (Research level):
 
 - Improve class Bubble to GW.
-- Energetic cost discussion of generation
-- Boiling water animation
+- Energetic cost discussion of generation.
 - Bending brane + Strings
-- Table 10D Black brane
 - Effective 4D potential for black hole
 - Dark dimension discussion
+- New 3D universe pictures
+
+Important animation to be added (Popular science level):
+
 - Four fundamental interactions
 - Strings and particles
 - Snake game from rectangle to torus
-- New 3D universe pictures
+- Boiling water animation
 - ??
 
 
