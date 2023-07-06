@@ -11,7 +11,6 @@ TO DO:
 Important animation to be added (Research level):
 
 - Improve class Bubble to GW.
-- Energetic cost discussion of generation.
 - Bending brane + Strings
 - Effective 4D potential for black hole
 - Dark dimension discussion

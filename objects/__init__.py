@@ -7,4 +7,6 @@ from .obj_graph_quantum import *
 from .obj_ads_jc import *
 from .obj_table_summary import *
 from .obj_energy_cost import *
+from .obj_table_10d import *
+from .obj_compvsdb import *
 
