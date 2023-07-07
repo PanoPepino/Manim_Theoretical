@@ -2,7 +2,7 @@ from decimal import Rounded
 from turtle import width
 from manim import *
 
-class CompVsDb(VGroup):
+class CompVsDbScales(VGroup):
     """VGroup that represents the different usual energetic scales for compactifications and dark bubbles. Already centered on screen.
     
     Parameters:
