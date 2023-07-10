@@ -24,7 +24,7 @@ class Bubble(VGroup):
         out_insta_text = MathTex("V(\phi_{+})").move_to(background.get_corner(UR) -[0.45,0.45,0])
         
         #Extra objects
-        mass = SVGMobject("manim_theoretical/figures/weight.svg").scale(0.3).move_to(brane.get_center())
+        mass = SVGMobject("figures/weight.svg").scale(0.3).move_to(brane.get_center())
         
         angles_bubble= VGroup()
         strings_pulling_5D= VGroup()
