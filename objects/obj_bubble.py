@@ -18,10 +18,11 @@ class Bubble(VGroup):
         brane = Circle(radius=0.5, color=RED_E, fill_opacity=0.3, stroke_width=1)
         
         #Text
-        in_text = MathTex("k_{-}").move_to(background.get_center())
-        out_text = MathTex("k_{+}").move_to(background.get_corner(UR) -[0.45,0.45,0])
-        in_insta_text = MathTex("V(\phi_{-})").move_to(background.get_center())
-        out_insta_text = MathTex("V(\phi_{+})").move_to(background.get_corner(UR) -[0.45,0.45,0])
+        
+        in_text = MathTex("k_{-}", font_size =25).move_to(background.get_center())
+        out_text = MathTex("k_{+}",font_size =25).move_to(background.get_corner(UR) -[0.45,0.45,0])
+        in_insta_text = MathTex("V(\phi_{-})", font_size =25).move_to(background.get_center())
+        out_insta_text = MathTex("V(\phi_{+})", font_size =25).move_to(background.get_corner(UR) -[0.45,0.45,0])
         
         #Extra objects
         mass = SVGMobject("figures/weight.svg").scale(0.3).move_to(brane.get_center())
@@ -57,5 +58,5 @@ class Bubble(VGroup):
             self.add(background, out_text, mass, brane)
         if type == "strings":
             self.add(background, out_text, in_text, edges, strings_pulling_5D, brane_w_points)
-        else:
+        if type is NONE:
             self.add(background, out_text, in_text, brane)

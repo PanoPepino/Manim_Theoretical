@@ -20,9 +20,9 @@ class Black_Hole(VGroup):
         theta_path = Circle(radius=0.7*radius, color=RED_E, fill_opacity=0, stroke_width=0)
         
         #Text
-        qt = MathTex("Q > T").move_to(bh.get_center())
-        mu = MathTex("\\mu").move_to(bh.get_center())
-        theta = MathTex("\\theta").move_to(theta_path.get_right())
+        qt = MathTex("Q > T", font_size = 30).move_to(bh.get_center())
+        mu = MathTex("\\mu", font_size = 30).move_to(bh.get_center())
+        theta = MathTex("\\theta", font_size = 30).move_to(theta_path.get_right())
         
         if type == "spinning":
             self.add(bh, mu, theta_path, theta, brane)
