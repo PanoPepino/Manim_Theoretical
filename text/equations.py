@@ -39,8 +39,8 @@ class EqCosmo(MathTex):
         self.fried_strings= MathTex("\\left(\\frac{\\dot{a}}{a}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \left(\\Lambda_{4}","+","\\frac{3}{8 \\pi a^{3}}\\left(\\tfrac{\\alpha_{+}}{k_{+}}- \\tfrac{\\alpha_{-}}{k_{-}}\\right) \\right)",color = my_color, font_size = my_font_size)
         self.fried_gw= MathTex("\\left(\\frac{a'(\\eta)}{a(\\eta)}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \\left(\\Lambda_{4}","+","3 \\zeta^{2}\\left(\\frac{q_{1}}{a^{2}}- \\frac{q_{3}}{H^{2}a^{4}}\\right) \\right)",color = my_color, font_size = my_font_size)
         self.fried_ind_bh_rs= MathTex("\\dot{a}^2=\\frac{1}{4 \\sigma^2 a^2}\\left[\\left(k_{-}^2-k_{+}^2\\right) a^2+\\left(f_{-}(a)-f_{+}(a)\\right)\\right]^2+\\frac{\\sigma^2}{4} a^2-\\frac{1}{2}\\left[\\left(f_{-}(a)+f_{+}(a)\\right)+\\left(k_{-}^2+k_{+}^2\\right) a^2\\right]",color = my_color, font_size = my_font_size)
-        self.fried_ind_bh_rs_junc= MathTex("\\dot{\\mathcal{Z}}^2","=","-f(\\mathcal{Z})-k^2 \\mathcal{Z}^2+\\frac{k^2}{k^2 J_c^2+\\mathcal{Z}^6}\\left(\\mathcal{Z}^4-\\mathcal{Z}_H^4+\\frac{\\theta \\kappa_5 J_c}{\\mathcal{Z}_H^2}\\left(1-\\frac{\\mathcal{Z}_H^2}{\\mathcal{Z}^2}\\right)\\right)^2",color = my_color, font_size = my_font_size)
-        self.fried_ind_bh_dbi= MathTex("\\dot{a}^2","=","-f(a)-k^2 a^2+\\frac{k^2}{a^6}\\left(a^4-a_H^4-\\frac{\\kappa_5^2 \\theta \\Delta \\theta}{a_H^2 k \\Delta k}\\left(1-\\frac{a_H^2}{a^2}\\right)\\right)^2",color = my_color, font_size = my_font_size)
+        self.fried_ind_bh_dbi= MathTex("\\dot{\\mathcal{Z}}^2","=","-f(\\mathcal{Z})-k^2 \\mathcal{Z}^2+\\frac{k^2}{k^2 J_c^2+\\mathcal{Z}^6}\\left(\\mathcal{Z}^4-\\mathcal{Z}_H^4+\\frac{\\theta \\kappa_5 J_c}{\\mathcal{Z}_H^2}\\left(1-\\frac{\\mathcal{Z}_H^2}{\\mathcal{Z}^2}\\right)\\right)^2",color = my_color, font_size = my_font_size)
+        self.fried_ind_bh_rs_junc= MathTex("\\dot{a}^2","=","-f(a)-k^2 a^2+\\frac{k^2}{a^6}\\left(a^4-a_H^4-\\frac{\\kappa_5^2 \\theta \\Delta \\theta}{a_H^2 k \\Delta k}\\left(1-\\frac{a_H^2}{a^2}\\right)\\right)^2",color = my_color, font_size = my_font_size)
 
 ## Actions and Hamiltonians
 
@@ -95,7 +95,9 @@ class EqQuan(MathTex):
         wkbwaves0= MathTex(r' \left\{',font_size=70).next_to(wkbwavespsi, RIGHT)
         wkbwaves1= MathTex(r'a \:e^{S(a_{0},0)} + b\: e^{-S(a_{0},0)},& \quad a \leq a_{0} \\c \:e^{i\:S(a,a_{0})} + d\: e^{-i\: S(a,a_{0})}, & \quad a \geq a_{0}').next_to(wkbwaves0, RIGHT)
         self.wkbwaves= VGroup(wkbwavespsi,wkbwaves0,wkbwaves1)
-        self.weights= MathTex("P_{HH} \propto e^{+2 S_{0}}","P_{V} \propto e^{-2 S_{0}}",color = my_color, font_size = my_font_size)
+        hh = MathTex("P_{HH} \propto e^{+2 S_{0}}" ,color = my_color, font_size = my_font_size)
+        vv = MathTex("P_{V} \propto e^{-2 S_{0}}",color = my_color, font_size = my_font_size)
+        self.weights= VGroup(hh,vv).arrange(DOWN)
         self.nucprobBT= MathTex("P \propto e^{-B}", "=e^","{ \\frac{-8 \\pi^{2} a_{0}^{2}}{\\kappa_{4}}}",color = my_color, font_size = my_font_size)
         self.nucprobWKB= MathTex("P \propto e^{-2 \\int p d\\tau}","=e^","{\\frac{-8 \\pi^{2} a_{0}^{2}}{\\kappa_{4}}}",color = my_color, font_size = my_font_size)
 

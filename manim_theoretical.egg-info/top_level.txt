@@ -1,4 +1,0 @@
-custom_animations
-figures
-objects
-text

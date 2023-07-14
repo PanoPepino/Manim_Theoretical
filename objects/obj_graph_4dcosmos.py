@@ -1,9 +1,7 @@
 from manim import *
 
 class Graph_4D_Cosmos(Group):
-    """This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D. Important things to notice are in parameters. The potential is Entry [-3].
-    
-    (CHECK ISSUE WITH VALUE TRACKER AND MOVING THE THING AROUND)
+    """This is a class to represent a 4D cosmo potential for the nucleated brane from the 10D. Important things to notice are in parameters. The potential is Entry [-2].
     
     Parameters:
         - self.cc: Entry [-1] from class. set_value() to add cosmo constant to the plot.

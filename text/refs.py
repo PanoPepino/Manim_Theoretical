@@ -21,8 +21,11 @@ class Ref(Tex):
         self.n190704628= Tex("[Banerjee, Danielsson, Dibitetto, Giri, Schillo, 1907.04268]", color = RED, font_size = my_font_size)
         self.n220200545= Tex("[Danielsson, DP, Tielemans, 2202.00545]", color = RED, font_size = my_font_size)
         self.n210503253= Tex("[Danielsson, DP, Tielemans, van Riet, 2105.03253]", color = RED, font_size = my_font_size)
+        self.n200713757 = Tex("[Basile, Lanza, 2007.13757]", color = RED, font_size = my_font_size)
         self.n190701562 = Tex("[Henrikson, Hoyo, Jokela, 1907.01562]", color = RED, font_size = my_font_size)
         self.n221110191 = Tex("[Danielsson, Henriksson, DP, 2211.10191]", color = RED, font_size = my_font_size)
+        self.n220512293 = Tex("[Montero, Vafa, Valenzuela, 2205.12293]", color = RED, font_size = my_font_size)
+        self.n210202164 = Tex("[Barnejee, Danielsson, Giri, 2102.02164]", color = RED, font_size = my_font_size)
 
 
 

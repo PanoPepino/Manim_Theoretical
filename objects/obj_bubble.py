@@ -2,7 +2,7 @@ from pickle import NONE
 from manim import *
 
 class Bubble(VGroup):
-    """This is a class that creates a VGroup that represents the bubble nucleation. Some of the written parameters depend on the arguments. Observe that the expanding bubble will always be the LAST element of the object.
+    """This is a class that creates a VGroup that represents the bubble nucleation. Some of the written parameters depend on the arguments. Observe that the expanding bubble will always be the FIRST element of the object.
 
     Parameters:
         - type = "instanton" : Written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton.
@@ -53,10 +53,10 @@ class Bubble(VGroup):
         brane_w_points = VGroup(brane, angles_bubble)
         
         if type == "instanton":
-            self.add(background, out_insta_text, in_insta_text, brane)
+            self.add(brane, in_insta_text, background, out_insta_text)
         if type == "mass":
-            self.add(background, out_text, mass, brane)
+            self.add(brane, background, out_text, mass)
         if type == "strings":
-            self.add(background, out_text, in_text, edges, strings_pulling_5D, brane_w_points)
+            self.add(brane_w_points, in_text, background, out_text, edges, strings_pulling_5D)
         if type is NONE:
-            self.add(background, out_text, in_text, brane)
+            self.add(brane, in_text, background, out_text)

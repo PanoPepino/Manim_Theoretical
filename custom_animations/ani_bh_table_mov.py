@@ -9,5 +9,5 @@ class Bh_Table_Mov(AnimationGroup):
     """
     def __init__(self, vgroup, **kwargs):
         super().__init__(
-            *[MoveAlongPath(vgroup[0][0][-i][1],vgroup[0][0][-i][0])for i in range(1,4)], MoveAlongPath(vgroup[0][0][-6][1],vgroup[0][0][-6][0]), rate_func= linear, **kwargs)
+            *[MoveAlongPath(vgroup[0][0][-i][1],vgroup[0][0][-i][0], rate_func = linear)for i in range(1,4)], MoveAlongPath(vgroup[0][0][-6][1],vgroup[0][0][-6][0],rate_func = linear), rate_func= linear, **kwargs)
         

@@ -35,12 +35,12 @@ class Rot_AdS_normal_vec(AnimationGroup):
                     Succession(
                     vgroup[-1].animate.move_to(center).build(),
                     Rotate(vgroup[-1], angle= PI, about_point= center),
-                    vgroup[-1].animate.rotate(PI).shift(4*RIGHT)),
+                    vgroup[-1].animate.rotate(PI).move_to(vgroup.get_right())),
                 **kwargs)
         if action == "darkbubble": 
                 super().__init__(
                     Succession(
-                    vgroup[-1].animate.shift(4*RIGHT),
+                    vgroup[-1].animate.move_to(vgroup.get_right()),
                     ),
                 **kwargs)
                 

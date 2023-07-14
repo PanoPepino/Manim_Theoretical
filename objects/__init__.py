@@ -8,4 +8,5 @@ from .obj_energy_cost import *
 from .obj_table_10d import *
 from .obj_compvsdb import *
 from .obj_graph_4dcosmos import *
+from .obj_3duni import *
 

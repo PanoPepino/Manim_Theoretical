@@ -17,19 +17,19 @@ class Black_Hole(VGroup):
         #Geometry
         bh = Circle(radius=radius, color=BLACK, fill_opacity=0.8, stroke_width=1)
         brane = Circle(radius=radius, color=RED_E, fill_opacity=0.2, stroke_width=1)
-        theta_path = Circle(radius=0.7*radius, color=RED_E, fill_opacity=0, stroke_width=0)
+        theta_path = Circle(radius= 0.5, color=RED_E, fill_opacity=0, stroke_width=0)
         
         #Text
-        qt = MathTex("Q > T", font_size = 30).move_to(bh.get_center())
-        mu = MathTex("\\mu", font_size = 30).move_to(bh.get_center())
-        theta = MathTex("\\theta", font_size = 30).move_to(theta_path.get_right())
+        qt = MathTex("Q > T", font_size = 25, color = WHITE).move_to(bh.get_center())
+        mu = MathTex("\\mu", font_size = 25, color = WHITE).move_to(bh.get_center())
+        theta = MathTex("\\theta", font_size = 25, color = WHITE).move_to(theta_path.get_right())
         
         if type == "spinning":
-            self.add(bh, mu, theta_path, theta, brane)
+            self.add(brane, bh, mu, theta, theta_path)
         if type == "fragmentation":
-            self.add(bh, qt, brane)
-        else:
-            self.add(bh, brane)
+            self.add(brane, bh, qt)
+        if type is None:
+            self.add(brane, bh)
 
 
 
