@@ -1,2 +1,0 @@
-
-# It seems that the folder that contains the figures should be at the same level in the directory as the main_file. Then, in the objects_folder, you have to specify the path respect to the main_directory.
