@@ -3,3 +3,7 @@ from .ani_ads_jc import *
 from .ani_bh_table_mov import *
 from .ani_energy_discussion import *
 from .ani_4D_pot_changes import *
+from .ani_set_scale import *
+from .ani_scale_discussion import *
+from .ani_g4_game import *
+from .ani_brane_bending import *

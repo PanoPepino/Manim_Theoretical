@@ -34,7 +34,7 @@ class EqCosmo(MathTex):
         super().__init__(**kwargs)
 
         self.fried_ind= MathTex("\\left(\\frac{\\dot{a}}{a}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","2  \\left(\\frac{1}{k_{-}}-\\frac{1}{k_{+}}\\right)^{-1} G_{5}"," \\left(\\sigma_{cr}- \\sigma\\right)","+ \\mathcal{O}(\\epsilon^{2})",color = my_color, font_size = my_font_size)
-        self.fried_usual= MathTex("\\left(\\frac{\\dot{a}}{a}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \\Lambda_{4}","+ \\mathcal{O}(\\epsilon^{2})",color = my_color, font_size = my_font_size)
+        self.fried_usual= MathTex("\\left(\\frac{\\dot{a}}{a}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \\rho_{\\Lambda}","+ \\mathcal{O}(\\epsilon^{2})",color = my_color, font_size = my_font_size)
         self.fried_matter= MathTex("\\left(\\frac{\\dot{a}}{a}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \\left(\\Lambda_{4}","+","\\frac{1}{2 \\pi^{2}}\\left(\\tfrac{M_{+}}{k_{+}}- \\tfrac{M_{-}}{k_{-}}\\right)\\frac{1}{a^{4}}\\right)",color = my_color, font_size = my_font_size)
         self.fried_strings= MathTex("\\left(\\frac{\\dot{a}}{a}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \left(\\Lambda_{4}","+","\\frac{3}{8 \\pi a^{3}}\\left(\\tfrac{\\alpha_{+}}{k_{+}}- \\tfrac{\\alpha_{-}}{k_{-}}\\right) \\right)",color = my_color, font_size = my_font_size)
         self.fried_gw= MathTex("\\left(\\frac{a'(\\eta)}{a(\\eta)}\\right)^{2}","=", "-\\frac{1}{a^{2}}","+", "\\frac{8 \\pi}{3}","G_{4}"," \\left(\\Lambda_{4}","+","3 \\zeta^{2}\\left(\\frac{q_{1}}{a^{2}}- \\frac{q_{3}}{H^{2}a^{4}}\\right) \\right)",color = my_color, font_size = my_font_size)
@@ -71,7 +71,7 @@ class EqJunc(MathTex):
     def __init__(self, my_color, my_font_size, **kwargs):
         super().__init__(**kwargs)
 
-        self.junc = MathTex(r' h_{ab}^{(+)} &= h_{ab}^{(-)}\\ S_{ab} &= \kappa_{5}^{-1}\left([K_{ab}^{(+)} \pm K_{ab}^{(-)}]-[K^{(+)} \pm K^{(-)}]h_{ab}\right)',color = my_color, font_size = my_font_size)
+        self.junc = MathTex(r' h_{ab}^{(+)} &= h_{ab}^{(-)}\\ S_{ab} &= \kappa_{5}^{-1}\left([\Delta K_{ab}]^{+}_{-} -[\Delta K]^{+}_{-}h_{ab}\right)',color = my_color, font_size = my_font_size)
         self.junc_db = MathTex(r'S_{ab} &= \kappa_{5}^{-1}\left([K_{ab}^{(+)} - K_{ab}^{(-)}]-[K^{(+)} - K^{(-)}]h_{ab}\right)',color = my_color, font_size = my_font_size)
         self.crit_t_rs= MathTex(r' \sigma = \frac{3 \left(k + k\right)}{\kappa_{5}}',color = my_color, font_size = my_font_size)
         self.crit_t_db= MathTex(r' \sigma_{cr} = \frac{3}{\kappa_{5}}\left(k_{-}-k_{+}\right)',color = my_color, font_size = my_font_size)
@@ -95,12 +95,75 @@ class EqQuan(MathTex):
         wkbwaves0= MathTex(r' \left\{',font_size=70).next_to(wkbwavespsi, RIGHT)
         wkbwaves1= MathTex(r'a \:e^{S(a_{0},0)} + b\: e^{-S(a_{0},0)},& \quad a \leq a_{0} \\c \:e^{i\:S(a,a_{0})} + d\: e^{-i\: S(a,a_{0})}, & \quad a \geq a_{0}').next_to(wkbwaves0, RIGHT)
         self.wkbwaves= VGroup(wkbwavespsi,wkbwaves0,wkbwaves1)
-        hh = MathTex("P_{HH} \propto e^{+2 S_{0}}" ,color = my_color, font_size = my_font_size)
-        vv = MathTex("P_{V} \propto e^{-2 S_{0}}",color = my_color, font_size = my_font_size)
-        self.weights= VGroup(hh,vv).arrange(DOWN)
+        hh = MathTex("P_{HH} \propto e^{+2 S_{0}}" ,color = DARK_BLUE, font_size = my_font_size)
+        vv = MathTex("P_{V} \propto e^{-2 S_{0}}",color = RED, font_size = my_font_size)
+        self.weights= VGroup(hh,vv).arrange(DOWN, aligned_edge = LEFT)
         self.nucprobBT= MathTex("P \propto e^{-B}", "=e^","{ \\frac{-8 \\pi^{2} a_{0}^{2}}{\\kappa_{4}}}",color = my_color, font_size = my_font_size)
         self.nucprobWKB= MathTex("P \propto e^{-2 \\int p d\\tau}","=e^","{\\frac{-8 \\pi^{2} a_{0}^{2}}{\\kappa_{4}}}",color = my_color, font_size = my_font_size)
+        self.nucprobBT2= MathTex("P \propto e^{-B}", "=e^","{ \\frac{-c}{\\Lambda_{4}}}",color = my_color, font_size = my_font_size)
+        self.nucprobWKB2= MathTex("P \propto e^{-2 \\int p d\\tau}","=e^","{\\frac{-c}{\\Lambda_{4}}}",color = my_color, font_size = my_font_size)
+        self.nucprob = VGroup(self.nucprobBT, self.nucprobWKB).arrange(LEFT, buff =2)
+        self.nucprob_2 = VGroup(self.nucprobBT2, self.nucprobWKB2).arrange(LEFT, buff =2)
+        
+class Scale_Discussion(MathTex):
+    """class as a collection of scale separation discussion.
 
+    Parameters:
+        - color: no need to explain.
+        - size: font_size.
+    """
+    def __init__(self, my_color, my_font_size, **kwargs):
+        super().__init__(**kwargs)
+        
+        scales = ["L", "l_{10}", "l_{5}", "l_{4}"]
+        spaces = ["M_{10}", "AdS_{5} \\times S^{5}"]
+        #color_discussion = [PURPLE_E, DARK_BLUE, GREEN, RED_E]
+        kappas = ["\\kappa_{10} \sim l^{8}_{10}", "\\kappa_{5} \sim \\frac{l^{8}_{10}}{L^{5}}", "\\kappa_{5} \sim \\frac{L^{3}}{N^{2}}", "\\kappa_{10} \sim N^{5/12} l_{5}"]
+        hierarchy = ["L > l_{10} > l_{5}", "N^{2/3}l_{5} > N^{5/12}l_{5} > l_{5}", "L > l_{10} > l_{4} > l_{5}", "N^{1/2}l_{4} > N^{1/4}l_{4} > l_{4} > N^{-1/6} l_{4}", "10^{-5} m > 10^{-20} m > 10^{-35} m > 10^{-45} m", "3.8 \\, meV < 13.7 \\, TeV < 1.22 \\times 10^{19} \\, GeV  < 5.1 \\times 10^{31}  \\, GeV"]
+        LNgame = ["\\kappa_{5} \sim \\frac{L^{3}}{N^{2}}","\\frac{\\Delta L}{L} \sim \\frac{\\Delta N}{N}"]
+        tension_game = ["\\sigma_{cr} = \\frac{3 \\Delta k}{\\kappa_{5}}", "\\sigma_{cr} = -\\frac{3 \\Delta L}{\\kappa_{5} L^{2}}","\\sigma_{cr} = - \\Delta N T_{D3}"]
+        g4_game = ["G_{4} \sim \\frac{k_{+} k_{-}}{k_{-} - k_{+}} G_{5}", "G_{4} \sim \\frac{N}{L} G_{5}"]
+        
+        
+        self.L_curvature = MathTex("L^{4}" ,"=" , " 4 \\pi g_{s} \\alpha'^{2}", "N" ,color = my_color, font_size = my_font_size)
+        self.scales_math= VGroup(*[MathTex(scales[i], font_size = my_font_size, color = my_color) for i in range(len(scales))])
+        self.spaces = VGroup(*[MathTex(spaces[i], font_size = my_font_size/(i+1), color = my_color)for i in range(len(spaces))])
+        self.kappas = VGroup(*[MathTex(kappas[i], font_size = my_font_size, color = my_color) for i in range(len(kappas))])
+        self.hierarchy = VGroup(*[MathTex(hierarchy[i], font_size = my_font_size, color = my_color) for i in range(len(hierarchy))])
+        self.LNgame= VGroup(*[MathTex(LNgame[i], font_size = my_font_size, color = my_color) for i in range(len(LNgame))])
+        self.tension_game = VGroup(*[MathTex(tension_game[i], font_size = my_font_size, color = my_color) for i in range(len(tension_game))])
+        self.g4_game = VGroup(*[MathTex(g4_game[i], font_size = my_font_size, color = my_color) for i in range(len(g4_game))])
+        
 
+class D3_corrections(MathTex):
+    """class as a collection for the D3 action + corrections .
+
+    Parameters:
+        - color: no need to explain.
+        - size: font_size.
+    """
+    def __init__(self, my_color, my_font_size, **kwargs):
+        super().__init__(**kwargs)
+        actionD3 = ["S[g_{\\mu \\nu}, C_{4}] = \\text{DBI}^{(0)} + \\alpha'^{2} \\text{DBI}^{(2)} + \\text{WZ}^{(0)} + \\alpha'^{2} \\text{WZ}^{(2)}",
+                    "\\sigma \sim T_{D3} \\left(1 - \\frac{\\alpha'^{2}}{L^{4}}\\right)",
+                    "\\sigma \sim \\sigma_{cr} \\left(1 - \\frac{1}{g_{s} N}\\right)"]
+        new_lambda = ["N = \\sqrt{\\frac{3 \\pi}{G_{4}^{2} g_{s} \\rho_{\\Lambda}}}", "N \sim 10^{60}"]
+        
+        self.actionD3 = VGroup(*[MathTex(actionD3[i], font_size = my_font_size, color = my_color) for i in range(len(actionD3))])
+        self.new_lambda = VGroup(*[MathTex(new_lambda[i], font_size = my_font_size, color = my_color) for i in range(len(new_lambda))])
+
+class EM_action(MathTex):
+    """class as a collection of equation to describe EM in bulk.
+
+    Parameters:
+        - color: no need to explain.
+        - size: font_size.
+    """
+    def __init__(self, my_color, my_font_size, **kwargs):
+        super().__init__(**kwargs)
+        self.actionEM = MathTex("S_{5}[H, \\mathcal{F}] \sim \int d^{5}x \\sqrt{g_{5}} \\: \\left(R - H^{2}\\right) - T_{D3} \int d^{5}x \\: \\delta \\left(r - a(\\eta)\\right) \\:\\sqrt{g_{4} + \\mathcal{F}}", font_size = my_font_size, color = my_color)
+        self.EOM = MathTex("\\partial_r H^{r\\mu \\nu} = \\frac{2 \\kappa_{5} \\:kr}{\\alpha'\\: \\pi^{2} } \\:{\\mathcal{F}}^{\\mu \\nu} \\:\\delta \\left(r-a(\\eta)\\right)")
+        
+        
 
 

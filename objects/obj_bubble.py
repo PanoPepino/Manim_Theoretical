@@ -9,6 +9,7 @@ class Bubble(VGroup):
     Parameters:
         - type = "instanton" : Written elements will be V+ and V-, corresponding to the nucleation of a CdL instanton.
         - type = "mass" : There will be a "weight" in the center of the expanding bubble.
+        - type = "electro" : Add an EM field on top (second bubble with slightly bigger radius)
         - type = "strings" : There will 8 strings attached to surface of the expanding bubble.
         - type = empty, will be k+ and k-.
     """
@@ -17,7 +18,8 @@ class Bubble(VGroup):
         
         #Geometry
         background= RoundedRectangle(corner_radius=0.1, height=5,  width=6.5, stroke_width=1, color= DARK_BLUE, fill_opacity=0.2)
-        brane = Circle(radius=0.5, color=RED_E, fill_opacity=0.3, stroke_width=1)
+        brane = Circle(radius=0.5, color=DARK_BLUE, fill_opacity=0.3, stroke_width=1)
+        em_top = Circle(radius=0.52, color=ORANGE, fill_opacity=0, stroke_width=1)
         
         #Text
         
@@ -34,7 +36,7 @@ class Bubble(VGroup):
         edges= VGroup()
         edges_word= [RIGHT, UR, UP, UL, LEFT, DL, DOWN, DR]
         for i in range(len(edges_word)):
-            edge_position= Dot(stroke_width=0, color = RED, fill_opacity= 0).move_to(background.get_edge_center(edges_word[i]))
+            edge_position= Dot(stroke_width=0, color = RED_E, fill_opacity= 0).move_to(background.get_edge_center(edges_word[i]))
             point_bubble= Dot(stroke_width=0, fill_opacity=0).move_to(brane.point_at_angle(i*360/8*DEGREES))
             edges.add(edge_position)
             angles_bubble.add(point_bubble)
@@ -54,10 +56,13 @@ class Bubble(VGroup):
         strings_pulling_5D[7].add_updater(lambda t: t.become(Line(edges[7].get_center(), angles_bubble[7].get_center(), stroke_width=0.8, color=RED)))
         brane_w_points = VGroup(brane, angles_bubble)
         
+        
         if type == "instanton":
             self.add(brane, in_insta_text, background, out_insta_text)
         if type == "mass":
             self.add(brane, background, out_text, mass)
+        if type == "electro":
+            self.add(brane, em_top, in_text, background, out_text)
         if type == "strings":
             self.add(brane_w_points, in_text, background, out_text, edges, strings_pulling_5D)
         if type is NONE:

@@ -13,34 +13,34 @@ class Rot_AdS_normal_vec(AnimationGroup):
     """
     def __init__(self, vgroup, action = None, **kwargs):
         self.vgroup = vgroup
-        center = vgroup[0].get_center()
+        center = vgroup[0].get_center()-[0,0.5,0]
         
         if action is None:
             super().__init__(
-                FadeIn(vgroup[-2]),
+                Succession(FadeIn(vgroup[-2]),
+                Wait(),
                 FadeOut(vgroup[-3]),
-                Rotate(vgroup[-4], about_point= vgroup[0].get_center(), axis= [0,-1,0], rate_func= linear),
+                Rotate(vgroup[-4], about_point= vgroup[0].get_center(), axis= [0,-1,0], rate_func= linear)),
                 **kwargs)
             
         if action == "restore":
             super().__init__(
-                FadeOut(vgroup[-2]),
-                FadeIn(vgroup[-3]),
+                Succession(
                 Rotate(vgroup[-4], about_point= vgroup[0].get_center(), axis= [0,1,0], rate_func= linear),
+                FadeIn(vgroup[-3])),
                 **kwargs)
             
         if action == "randalsundrum": 
                 super().__init__(
-                    FadeIn(vgroup[-2]),
                     Succession(
                     vgroup[-1].animate.move_to(center).build(),
                     Rotate(vgroup[-1], angle= PI, about_point= center),
-                    vgroup[-1].animate.rotate(PI).move_to(vgroup.get_right())),
+                    vgroup[-1].animate.rotate(PI).move_to(vgroup.get_right() - [0.3,0.6,0])),
                 **kwargs)
         if action == "darkbubble": 
                 super().__init__(
                     Succession(
-                    vgroup[-1].animate.move_to(vgroup.get_right()),
+                    vgroup[-1].animate.move_to(vgroup.get_right()- [0.3,0.6,0]),
                     ),
                 **kwargs)
                 

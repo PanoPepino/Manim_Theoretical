@@ -14,7 +14,8 @@ class Summary_Table(VGroup):
             ["\Lambda_{5}^{(\pm)} <0, r = a(\\tau)", "\Lambda_{4}>0", "1807.01570"],
             ["M","Radiation \propto \\tfrac{1}{a^{4}}", "1907.04268"],
             ["Strings", "Dust \propto \\tfrac{1}{a^{3}}","1907.04268"],
-            ["\delta g_{\mu \\nu}", "\delta g_{ab}", "2202.00545"]],
+            ["\delta g_{\mu \\nu}", "\delta g_{ab}", "2202.00545"],
+            ["H_{\\mu \\nu \\gamma}", "F_{ab}", "2310.15032"]],
             include_outer_lines=False,
             stroke_color=BLACK)
         sum_tab.set_stroke_color(BLACK)

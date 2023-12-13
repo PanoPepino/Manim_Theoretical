@@ -7,6 +7,7 @@ class Expand_Bubble(AnimationGroup):
         - vgroup: The object to eat. Takes last entry and expand.
         - type: 
             - None: nothing happens.
+            - electro: expand both bubbles.
             - GW: Broadcast the expanding bubble to simulate some waves.
             - spinning: takes the inside text and rotate around BH (10D spinning black hole feature).
             - 3duni: takes a 3d universe and expand it in such a way that looks like it looses curvature.
@@ -17,6 +18,11 @@ class Expand_Bubble(AnimationGroup):
         if type is None:
             super().__init__(
                 vgroup[0].animate(rate_func = linear).scale(scale),
+                **kwargs)
+        if type == "electro": ## Requires to be checked.
+            super().__init__(
+                AnimationGroup(vgroup[:2].animate(rate_func = linear).scale(scale),
+                Flash(vgroup[1], line_length=(vgroup[1].radius), line_stroke_width =3, num_lines=20, color=YELLOW_E, flash_radius=0.8*(vgroup[1].radius), time_width=0.8, rate_func = rush_from)),
                 **kwargs)
         
         if type == "GW":
